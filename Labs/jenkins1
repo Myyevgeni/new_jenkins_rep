@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("DAocker_ver1"){
+        stage("Docker_ver1"){
             steps{
                 sh 'docker --version'
             }
