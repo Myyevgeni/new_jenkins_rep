@@ -1,15 +1,20 @@
 pipeline{
     agent any
+    environment{
+        IMAGE_NAME = 'myhttpd'
+        VERSION = 'V1'
+    }
     stages{
         stage("Docker_ver1"){
             steps{
                 sh 'docker --version'
             }
         }
-        stage("git-verify"){
+        stage("docker-build"){
             steps{
-                sh 'git --version'
+                sh 'docker build -t myhttpd:v1'
             }
         }
+        
     }
 }
