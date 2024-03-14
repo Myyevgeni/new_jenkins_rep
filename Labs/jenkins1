@@ -6,5 +6,10 @@ pipeline{
                 sh 'docker --version'
             }
         }
+        stage("git-verify"){
+            steps{
+                sh 'git --version'
+            }
+        }
     }
 }
