@@ -12,8 +12,9 @@ pipeline{
         }
         stage("docker-build"){
             steps{
-                dir('Labs'){
-                  sh 'sudo -S docker build -t ${IMAGE_NAME}:${VERSION} .'  
+                retry(3){
+                    dir('Labs'){
+                    sh 'sudo -S docker build -t ${IMAGE_NAME}:${VERSION} .'  
                 }
 
                 
