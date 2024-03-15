@@ -12,7 +12,11 @@ pipeline{
         }
         stage("docker-build"){
             steps{
-                sh 'docker build -t myhttpd:v1'
+                dir('Labs'){
+                  sh 'docker build -t ${IMAGE_NAME}:${VERSION} .'  
+                }
+
+                
             }
         }
         
