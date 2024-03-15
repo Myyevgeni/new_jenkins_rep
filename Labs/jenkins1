@@ -15,8 +15,8 @@ pipeline{
                 retry(3){
                     dir('Labs'){
                     sh 'sudo -S docker build -t ${IMAGE_NAME}:${VERSION} .'  
+                    }
                 }
-
                 
             }
         }
